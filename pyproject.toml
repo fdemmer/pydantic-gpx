@@ -23,7 +23,11 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-dependencies = ["pydantic-xml"]
+dependencies = [
+  "pydantic-xml",
+  "pytz",
+  'eval-type-backport;python_version<="3.8"'
+]
 
 [project.urls]
 Documentation = "https://github.com/fdemmer/pydantic-gpx#readme"
@@ -73,7 +77,7 @@ line-length = 79
 
 
 [tool.ruff]
-src = ["src", "tests", "docs"]
+src = ["src", "tests", "docs", "conftest.py"]
 
 [tool.ruff.lint]
 select = ["ALL"]
