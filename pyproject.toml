@@ -2,17 +2,19 @@
 requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
+
 [project]
 name = "pydantic-gpx"
 dynamic = ["version"]
-description = ''
+description = "Pydantic model for GPX data"
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
-keywords = []
+keywords = ["pydantic", "xml", "gpx"]
 authors = [{ name = "Florian Demmer", email = "fdemmer@gmail.com" }]
 classifiers = [
   "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
@@ -20,14 +22,14 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/unknown/pydantic-gpx#readme"
-Issues = "https://github.com/unknown/pydantic-gpx/issues"
-Source = "https://github.com/unknown/pydantic-gpx"
+Documentation = "https://github.com/fdemmer/pydantic-gpx#readme"
+Issues = "https://github.com/fdemmer/pydantic-gpx/issues"
+Source = "https://github.com/fdemmer/pydantic-gpx"
+
 
 [tool.hatch.version]
 source = "vcs"
@@ -51,11 +53,12 @@ dependencies = ["mypy>=1.0.0"]
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:src/pydantic_gpx tests}"
 
+
 [tool.coverage.run]
 source_pkgs = ["pydantic_gpx", "tests"]
 branch = true
 parallel = true
-omit = ["src/pydantic_gpx/__about__.py"]
+omit = []
 
 [tool.coverage.paths]
 pydantic_gpx = ["src/pydantic_gpx", "*/pydantic-gpx/src/pydantic_gpx"]
@@ -63,3 +66,22 @@ tests = ["tests", "*/pydantic-gpx/tests"]
 
 [tool.coverage.report]
 exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
+
+[tool.black]
+line-length = 79
+
+
+[tool.ruff]
+src = ["src", "tests", "docs"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.ruff.lint.isort]
+lines-between-types = 1
+lines-after-imports = 2
+known-first-party = [
+  "pydantic",
+  "tests",
+]
