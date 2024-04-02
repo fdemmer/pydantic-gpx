@@ -23,7 +23,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-dependencies = []
+dependencies = ["pydantic-xml"]
 
 [project.urls]
 Documentation = "https://github.com/fdemmer/pydantic-gpx#readme"
@@ -81,7 +81,4 @@ select = ["ALL"]
 [tool.ruff.lint.isort]
 lines-between-types = 1
 lines-after-imports = 2
-known-first-party = [
-  "pydantic",
-  "tests",
-]
+known-first-party = ["pydantic", "tests"]
