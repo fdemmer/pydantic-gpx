@@ -3,7 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/pydantic-gpx.svg)](https://pypi.org/project/pydantic-gpx)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pydantic-gpx.svg)](https://pypi.org/project/pydantic-gpx)
 
------
+---
 
 **Table of Contents**
 
