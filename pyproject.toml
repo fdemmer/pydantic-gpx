@@ -40,7 +40,7 @@ source = "vcs"
 raw-options = { local_scheme = "no-local-version" }
 
 [tool.hatch.envs.default]
-dependencies = ["coverage[toml]>=6.5", "pytest"]
+dependencies = ["coverage[toml]>=6.5", "pytest", "gpxpy"]
 
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
@@ -73,7 +73,7 @@ exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 
 
 [tool.black]
-line-length = 79
+line-length = 90
 
 
 [tool.ruff]
